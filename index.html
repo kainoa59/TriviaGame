@@ -1,0 +1,191 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="logic.js"></script>
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Trivia Game:</h1>
+            <p class="lead">Answer the trivia questions correctly before time runs out.</p>
+        </div>
+    </div>
+    <div id="time-number">0
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="list-group1">
+                    <button type="button" class="list-group-item list-group-item-action active" disabled>
+                        37 - 9 = 27
+                    </button>
+                    <button type="button" class="q1f list-group-item list-group-item-action" value="inc">True</button>
+                    <button type="button" class="q1t list-group-item list-group-item-action" value="cor">False</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="list-group">
+                    <button type="button" class="list-group-item list-group-item-action active" disabled>
+                        6 * 6 = 36
+                    </button>
+                    <button type="button" class="q2t list-group-item list-group-item-action">True</button>
+                    <button type="button" class="q2f list-group-item list-group-item-action">False</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="list-group">
+                    <button type="button" class="list-group-item list-group-item-action active" disabled>
+                        12 / 3 = 3
+                    </button>
+                    <button type="button" class="q3f list-group-item list-group-item-action">True</button>
+                    <button type="button" class="q3t list-group-item list-group-item-action">False</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="list-group">
+                    <button type="button" class="list-group-item list-group-item-action active" disabled>
+                        7 * 3 = 23
+                    </button>
+                    <button type="button" class="q4f list-group-item list-group-item-action">True</button>
+                    <button type="button" class="q4t list-group-item list-group-item-action">False</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="list-group">
+                    <button type="button" class="list-group-item list-group-item-action active" disabled>
+                        15 - 9 = 6
+                    </button>
+                    <button type="button" class="q5t list-group-item list-group-item-action">True</button>
+                    <button type="button" class="q5f list-group-item list-group-item-action">False</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="submit btn btn-primary btn-lg"><strong>Submit:</strong></button>
+    <script>
+        var time = 60;
+
+        var playerscore;
+
+        var intervalId;
+
+        var correct = 0;
+
+        var wrong = 0;
+
+        // $("#submit").on("click", submit);
+
+        function run() {
+            intervalId = setInterval(decrement, 1000);
+        }
+
+        function submit() {
+            alert("Correct: " + correct + " " + "Wrong: " + wrong);
+
+        }
+
+        function decrement() {
+            time--;
+
+            $("#time-number").html("<h1>" + "Time left: " + time + "</h1>");
+
+            if (time === 0) {
+                submit();
+
+                clearInterval(intervalId);
+
+                // alert("time up");
+
+            }
+        }
+        run();
+        // My javascript linked correctly, but my onclick functions wouldn't work.
+        // I moved them into the html and they started working
+        $(".q1f").click(function () {
+            console.log("hello");
+            wrong++;
+            console.log(wrong);
+        });
+        $(".q1t").click(function () {
+            correct++;
+            console.log(correct);
+        });
+        $(".q2f").click(function () {
+            console.log("hello");
+            wrong++;
+            console.log(wrong);
+        });
+        $(".q2t").click(function () {
+            correct++;
+            console.log(correct);
+        });
+        $(".q3f").click(function () {
+            console.log("hello");
+            wrong++;
+            console.log(wrong);
+        });
+        $(".q3t").click(function () {
+            correct++;
+            console.log(correct);
+        });
+        $(".q4f").click(function () {
+            console.log("hello");
+            wrong++;
+            console.log(wrong);
+        });
+        $(".q4t").click(function () {
+            correct++;
+            console.log(correct);
+        });
+        $(".q5f").click(function () {
+            console.log("hello");
+            wrong++;
+            console.log(wrong);
+        });
+        $(".q5t").click(function () {
+            correct++;
+            console.log(correct);
+        });
+
+        $(".submit").click(function submit() {
+            alert("Correct: " + correct + " " + "Wrong: " + wrong);
+
+            time = 1;
+        })
+
+        </script>
+
+</body>
+<style>
+    .container {
+        padding: 30px;
+    }
+</style>
+
+</html>
